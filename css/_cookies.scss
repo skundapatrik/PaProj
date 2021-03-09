@@ -1,0 +1,93 @@
+@media only screen and (min-width: 960px) {
+    #cookie-confirmation.cookie-notification-position-bottom {
+        border-bottom: 0;
+        bottom: 0;
+        top: auto;
+        border-top: 1px solid black;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    #cookie-confirmation {
+        position: fixed;
+    }
+}
+
+#cookie-confirmation {
+    background: #fff;
+    height: auto;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100000000 !important;
+    border-bottom: 1px solid #cbd6e2;
+    border-top: 1px solid black;
+    color: #33475b;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 400 !important;
+    line-height: inherit;
+    text-align: left;
+    text-shadow: none !important;
+    font-size: 12px;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    line-height: 18px;
+}
+#cookie-confirmation #cookie-confirmation-inner #policy-wording {
+    margin-bottom: 12px;
+}
+
+#cookie-confirmation #cookie-confirmation-inner p {
+    margin: 0 0 12px;
+}
+
+#cookie-confirmation #cookie-confirmation-inner #cookie-confirmation-buttons-area {
+    margin: 10px 0 0 !important;
+    text-align: right !important;
+}
+
+#cookie-confirmation #cookie-confirmation-inner a#confirmation-button {
+    background-color: white !important;
+    border: 1px solid #000000 !important;
+    margin-right: 12px !important;
+    color: black;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 400 !important;
+    line-height: inherit;
+    text-align: left;
+    text-shadow: none !important;
+}
+
+#cookie-confirmation #cookie-confirmation-inner a#confirmation-button,
+#cookie-confirmation #cookie-confirmation-inner a#decline-button {
+    display: inline-block;
+    padding: 10px 16px !important;
+    text-decoration: none !important;
+}
+#cookie-confirmation div#cookie-confirmation-inner a#decline-button {
+    border: 1px solid #000000 !important;
+    color: #000000;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 400 !important;
+    line-height: inherit;
+    text-align: left;
+    text-shadow: none !important;
+}
+
+#policy-wording {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.cookies-hidden {
+    display: none;
+}

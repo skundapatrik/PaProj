@@ -1,0 +1,133 @@
+@import "./mixins";
+@import 'variables';
+
+#cover-overlay {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+#main-body-without-image {
+  background: url(../title.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+/* not doing anything */
+#collection-cover {
+  background: #fff;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+}
+
+.cover-logo-wrapper {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  bottom: 4%;
+  padding: 0 15px;
+  font-family: $font--sans-serif;
+  a {
+    text-decoration: none;
+  }
+
+  a.business-name-link {
+    display: inline-block;
+    padding: 10px 0;
+    color: #fff;
+    -webkit-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+  }
+}
+
+.page-container {
+  margin: 0 auto;
+  position: initial;
+}
+
+.positioning-top {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+}
+
+.page-container {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.gallery-heading {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.gamma-gallery {
+  list-style-type: none;
+  width: 100%;
+  position: relative;
+  li img {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.grid-tint {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  background: 0 0;
+  opacity: 0;
+  transition-duration: 150ms, 150ms;
+  transition-timing-function: ease-in-out, ease-in-out;
+  transition-delay: 0s, 0s;
+  z-index: 1;
+  pointer-events: none;
+  .fade-in {
+    opacity: 1;
+    background: linear-gradient(
+      to bottom,
+      transparent 0,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+  }
+}
+
+.gallery-back-to-top {
+  cursor: pointer;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  @include buttonindetails();
+}
+
+.button-row {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  z-index: 9;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  @include buttonindetails();
+}

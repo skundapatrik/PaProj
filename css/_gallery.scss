@@ -1,0 +1,49 @@
+@import 'variables';
+
+.portfolio-item {
+    max-width: 25rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#name {
+    color: #fff;
+    margin: 12px 0 0 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-family: $font--sans-serif;
+}
+
+#date {
+    font-family: $font--serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+#name,
+#date {
+    p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        cursor: pointer;
+        /* line-height: 1.4; */
+    }
+}
+
+.h1-padding-botton {
+    padding-bottom: 20px;
+    font-family: $font--sans-serif;
+}
+
+.img-fluid {
+    transition: opacity 0.2s ease-out;
+    &:hover {
+        opacity: 0.5;
+    }
+}

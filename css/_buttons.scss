@@ -1,0 +1,58 @@
+.button-white {
+    a {
+        color: white;
+        padding: 15px 50px;
+        border: 1px solid white;
+        text-decoration: none;
+        display: inline-block;
+        -webkit-transition: all 200ms ease-out;
+        transition: all 200ms ease-out;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-family: spectral, serif;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        font-weight: 400;
+        letter-spacing: 0.15625rem;
+        &:hover {
+            background: rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+.button-black {
+    a {
+        color: black;
+        padding: 15px 50px;
+        border: 1px solid black;
+        text-decoration: none;
+        display: inline-block;
+        -webkit-transition: all 200ms ease-out;
+        transition: all 200ms ease-out;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-family: spectral, serif;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        font-weight: 400;
+        letter-spacing: 0.15625rem;
+        &:hover {
+            background: rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    .button-white a, .button-black a{
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    .button-white a, .button-black a {
+        font-size: 0.7rem;
+        padding: 13px 35px;
+    }
+}

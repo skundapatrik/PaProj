@@ -1,0 +1,11 @@
+@mixin buttonindetails {
+    .button-detail a {
+        color: white;
+        padding: 15px 50px;
+        border: 1px solid white;
+        text-decoration: none;
+        display: inline-block;
+        -webkit-transition: all 200ms ease-out;
+        transition: all 200ms ease-out;
+    }
+}

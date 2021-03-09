@@ -1,0 +1,323 @@
+@import 'variables';
+/* ------ Blog Page - single ------ */
+
+@mixin transButton {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+.blog-container {
+    margin-left: 80px;
+    margin-top: 30px;
+    width: calc(100% - 160px);
+    min-width: initial;
+    background-color: $color_grey_light;
+    padding: 30px 10% 20px 10%;
+    .navigation {
+        width: 100%;
+        height: 50px;
+        background-color: inherit;
+        div {
+            background-color: inherit;
+        }
+        .all-posts {
+            font-family: "OpensSans-Light";
+            float: left;
+            width: 50%;
+            a {
+                text-decoration: none;
+                color: $color_grey_dark2;
+            }
+        }
+        .search {
+            float: right;
+            width: 50%;
+            svg {
+                float: right;
+                path {
+                    color: $color_grey_dark2; //TODO search color should be gray
+                }
+            }
+        }
+    }
+    .paper-layout {
+        background-color: $color_white;
+        padding: 30px 10% 20px 10%;
+        img {
+            padding-bottom: 30px;
+        }
+        .header-text {
+            h1 {
+                font-family: "DancingScript";
+                font-style: normal;
+                font-weight: normal;
+                font-size: 3rem;
+                padding-top: 30px;
+                padding-bottom: 20px;
+            }
+            h2 {
+                font-family: "OpensSans-Regular";
+                font-size: 1.2rem;
+                color: $color_grey_dark;
+                padding-bottom: 30px;
+            }
+        }
+        .content {
+            p {
+                font-family: "OpensSans-Regular";
+                padding-top: 20px;
+            }
+            ul {
+                padding-left: 40px;
+                p {
+                    padding-top: 5px;
+                }
+            }
+        }
+        .categories {
+            padding-top: 40px;
+            span a {
+                color: $color_grey_dark2;
+                text-decoration: none;
+                margin-right: 10px;
+                font-family: "OpensSans-Regular";
+            }
+        }
+        .post-social-actions {
+            width: 100%;
+            border-top: 1px solid $color_grey_dark2;
+            border-bottom: 1px solid $color_grey_dark2;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            button {
+                margin-right: 20px;
+                background-color: Transparent;
+                background-repeat: no-repeat;
+                border: none;
+                cursor: pointer;
+                overflow: hidden;
+                outline: none;
+            }
+        }
+        .post-stats {
+            padding-bottom: 40px;
+            .views {
+                float: left;
+                width: 50%;
+                font-family: "OpensSans-Light";
+            }
+            .likes {
+                width: 50%;
+                float: left;
+                button {
+                    float: right;
+                    @include transButton();
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .blog-container {
+        margin: 0px;
+        width: 100%;
+        padding: 15px 5% 15px 5%;
+        .navigation {
+            height: 40px;
+        }
+        .paper-layout {
+            padding: 20px 5% 20px 5%;
+            .header-text {
+                h1 {
+                    font-size: 2rem;
+                    padding-top: 0px;
+                    padding-bottom: 20px;
+                }
+                h2 {
+                    font-size: 1rem;
+                }
+            }
+            img {
+                padding-bottom: 0px;
+            }
+            .post-stats {
+                padding-bottom: 20px;
+            }
+        }
+    }
+}
+
+/* ------ Blog Page Cards ------ */
+
+@import "./fontawesome/scss/fontawesome.scss";
+@import "./fontawesome/scss/solid.scss";
+@import "./fontawesome/scss/brands.scss";
+
+
+.header-text {
+    h1 {
+        font-family: "DancingScript";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 3rem;
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+}
+
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    box-shadow: 0 3px 7px -1px rgba(#000, 0.1);
+    margin-bottom: 1.6%;
+    background: $color_white;
+    line-height: 1.4;
+    font-family: sans-serif;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 0;
+    &:hover {
+        .photo {
+            transform: scale(1.3);
+        }
+    }
+    .meta {
+        position: relative;
+        z-index: 0;
+        height: 200px;
+    }
+    .photo {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.4s;
+    }
+    .description {
+        padding: 1rem;
+        background: $color_white;
+        position: relative;
+        z-index: 1;
+        h1,
+        h2 {
+            font-family: "DancingScript";
+            font-style: normal;
+            font-weight: normal;
+        }
+        h1 {
+            line-height: 1;
+            margin: 0;
+            font-size: 1.7rem;
+        }
+        h2 {
+            font-size: 1rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: $color_grey_dark;
+            margin-top: 5px;
+        }
+        .read-more {
+            text-align: right;
+            a {
+                color: $color_prime;
+                display: inline-block;
+                position: relative;
+                font-family: "OpensSans-Bold";
+
+                &:after {
+                    @extend %fa-icon;
+                    @extend .fas;
+                    content: fa-content($fa-var-arrow-right);
+                    margin-left: -10px;
+                    opacity: 0;
+                    vertical-align: middle;
+                    transition: margin 0.3s, opacity 0.3s;
+                }
+
+                &:hover:after {
+                    margin-left: 5px;
+                    opacity: 1;
+                }
+            }
+        }
+        .bottom {
+            color: $color_grey_dark;
+            .line {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                border-top: 1px solid $color_grey_dark;
+                width: 100%;
+            }
+            .name {
+                float: left;
+            }
+            .date {
+                float: right;
+            }
+        }
+    }
+    p {
+        position: relative;
+        margin: 1rem 0 0;
+        &:first-of-type {
+            margin-top: 1.25rem;
+            &:before {
+                content: "";
+                position: absolute;
+                height: 3px;
+                background: $color_prime;
+                width: 35px;
+                top: -0.75rem;
+            }
+        }
+    }
+    &:hover {
+        .details {
+            left: 0%;
+        }
+    }
+
+    @media (min-width: 640px) {
+        flex-direction: row;
+        max-width: 900px;
+        .meta {
+            flex-basis: 60%;
+            height: auto;
+        }
+        .description {
+            flex-basis: 60%;
+            &:before {
+                //transform: skewX(-3deg);
+                //content: "";
+                background: #fff;
+                width: 30px;
+                position: absolute;
+                left: -10px;
+                top: 0;
+                bottom: 0;
+                z-index: -1;
+            }
+        }
+        &.alt {
+            flex-direction: row-reverse;
+            .description {
+                &:before {
+                    left: inherit;
+                    right: -10px;
+                    // transform: skew(3deg);
+                }
+            }
+        }
+    }
+}
